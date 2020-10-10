@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">test</string>
+    <string name="test">test_operation_activity</string>
+    <string name="numerator2">numerator2</string>
+    <string name="denominator1">denominator1</string>
+    <string name="denominator2">denominator2</string>
+    <string name="button_calculate">button_calculate</string>
+    <string name="numerator1">numerator1</string>
+</resources>
