@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class DoguestionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_doguestions);
         mainGrid = findViewById(R.id.mainGrid);
         setToggleEvent(mainGrid);
@@ -22,7 +24,7 @@ public class DoguestionsActivity extends AppCompatActivity {
         CardView MIN = findViewById(R.id.tutorialmin);
         CardView DEL = findViewById(R.id.tutorialdel);
         CardView UMN = findViewById(R.id.tutorialumn);
-        CardView mix = findViewById(R.id.mix);
+        CardView mix = findViewById(R.id.tutorialmix);
         Button button_back = findViewById(R.id.button_back);
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override

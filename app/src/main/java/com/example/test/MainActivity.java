@@ -4,33 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     GridLayout mainGrid;
-    CardView reports;
+    CardView learn;
     CardView doguestions;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-        reports = findViewById(R.id.reports);
-        doguestions = findViewById(R.id.doguestions);
+        learn = findViewById(R.id.learn);
+        doguestions = findViewById(R.id.tutorialumn);
         mainGrid = findViewById(R.id.mainGrid);
         setToggleEvent(mainGrid);
-        doguestions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DoguestionsActivity.class));
-            }
-        });
-        reports.setOnClickListener(new View.OnClickListener() {
+        learn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TutorialActivity.class));
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mainGrid.getChildCount(); i++) {
             final CardView cardView = (CardView) mainGrid.getChildAt(i);
             final int idx = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
+            cardView.setOnClickListener(new View.   OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (idx <= 3) {

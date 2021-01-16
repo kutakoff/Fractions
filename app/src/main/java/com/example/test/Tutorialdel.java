@@ -16,9 +16,9 @@ public class Tutorialdel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorialdel);
-        VideoView videoView = findViewById(R.id.video_view1);
+        VideoView videoView = findViewById(R.id.video_view5);
         Button button_back = findViewById(R.id.button_back);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.del;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
@@ -32,7 +32,7 @@ public class Tutorialdel extends AppCompatActivity {
                     Intent intent = new Intent(Tutorialdel.this, TutorialActivity.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
+                } catch (Exception ignored) {
 
                 }
             }

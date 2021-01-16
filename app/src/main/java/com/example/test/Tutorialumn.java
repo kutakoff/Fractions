@@ -18,7 +18,7 @@ public class Tutorialumn extends AppCompatActivity {
         setContentView(R.layout.activity_tutorialumn);
         VideoView videoView = findViewById(R.id.video_view4);
         Button button_back = findViewById(R.id.button_back);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.umn;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
@@ -32,7 +32,7 @@ public class Tutorialumn extends AppCompatActivity {
                     Intent intent = new Intent(Tutorialumn.this, TutorialActivity.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
+                } catch (Exception ignored) {
 
                 }
             }

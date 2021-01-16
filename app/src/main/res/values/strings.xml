@@ -6,4 +6,7 @@
     <string name="denominator2">denominator2</string>
     <string name="button_calculate">button_calculate</string>
     <string name="numerator1">numerator1</string>
+    <string name="operation_with_fraction_description">Решение дробей</string>
+    <string name="todo">TODO</string>
+    <string name="Деление">Деление</string>
 </resources>

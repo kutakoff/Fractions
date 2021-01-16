@@ -16,9 +16,9 @@ public class Tutorialminus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorialminus);
-        VideoView videoView = findViewById(R.id.video_view2);
+        VideoView videoView = findViewById(R.id.video_view3);
         Button button_back = findViewById(R.id.button_back);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.min;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
@@ -32,7 +32,7 @@ public class Tutorialminus extends AppCompatActivity {
                     Intent intent = new Intent(Tutorialminus.this, TutorialActivity.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
+                } catch (Exception ignored) {
 
                 }
             }

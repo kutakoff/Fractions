@@ -9,13 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
-import android.widget.VideoView;
 
 public class TutorialActivity extends AppCompatActivity {
 CardView tutorialplus;
 CardView tutorialmin;
 CardView tutorialumn;
 CardView tutorialdel;
+CardView firststartvideo;
 
 
     @Override
@@ -28,6 +28,8 @@ CardView tutorialdel;
         tutorialmin = findViewById(R.id.tutorialmin);
         tutorialumn = findViewById(R.id.tutorialumn);
         tutorialdel = findViewById(R.id.tutorialdel);
+        firststartvideo = findViewById(R.id.firststartvideo);
+
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
         Uri uri = Uri.parse(videoPath);
         MediaController mediaController = new MediaController(this);
@@ -64,6 +66,12 @@ CardView tutorialdel;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TutorialActivity.this, Tutorialdel.class));
+            }
+        });
+        firststartvideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TutorialActivity.this, Startvideo.class));
             }
         });
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -11,16 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.test.tools.EditTextWatcher;
 
 public class OperationActivity extends AppCompatActivity {
 
-    private TextView textView, textViewOperation;
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_operation);
-        Button button_back = findViewById(R.id.button_back);
+        final Button button_back = findViewById(R.id.button_back);
+
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,10 +33,9 @@ public class OperationActivity extends AppCompatActivity {
                 }
             }
         });
-        textView = findViewById(R.id.textName);
-        textViewOperation = findViewById(R.id.operationName);
         setTextViewsFocusChangeListener(getIntent().getExtras().getInt("operation"));
     }
+
     @Override
     public void onBackPressed() {
         try {
@@ -48,51 +47,39 @@ public class OperationActivity extends AppCompatActivity {
         }
     }
 
-    private void setTextViewsFocusChangeListener(final int operationIdx) {
+    public void setTextViewsFocusChangeListener(final int operationIdx) {
+        TextView textViewOperation = findViewById(R.id.operationName);
         textViewOperation.setText(getOperationNameByIndex(operationIdx));
         final int[] editTexts = new int[]{R.id.edNumerator1, R.id.edDenominator1, R.id.edNumerator2, R.id.edDenominator2};
         final EditText[] editTextComponents = new EditText[editTexts.length];
         for (int i = 0, textViewsLength = editTexts.length; i < textViewsLength; i++) {
             int textViewIdx = editTexts[i];
             editTextComponents[i] = findViewById(textViewIdx);
-            editTextComponents[i].addTextChangedListener(new EditTextWatcher(new Runnable() {
-                @Override
-                public void run() {
-                    closeKeyboard();
-                }
-            }));
-            editTextComponents[i].setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                @Override
-                public void onFocusChange(View v, boolean hasFocus) {
-                    boolean isCalc = true;
-                    for (TextView component : editTextComponents) {
-                        if (component.getText().length() <= 0) {
-                            textView.setText("");
-                            isCalc = false;
-                            break;
-                        }
-                    }
-                    if (isCalc) {
-                        textView.setText(
-                                doOperation(
-                                        operationIdx,
-                                        Integer.parseInt(editTextComponents[0].getText().toString()),
-                                        Integer.parseInt(editTextComponents[1].getText().toString()),
-                                        Integer.parseInt(editTextComponents[2].getText().toString()),
-                                        Integer.parseInt(editTextComponents[3].getText().toString()))
-                        );
-                    }
-                }
-            });
         }
+        final TextView textName = findViewById(R.id.textName);
+        final Button button1 = findViewById(R.id.buttonCalculate);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                try {
+                    textName.setText(doOperation(operationIdx,
+                            Integer.parseInt(editTextComponents[0].getText().toString()),
+                            Integer.parseInt(editTextComponents[1].getText().toString()),
+                            Integer.parseInt(editTextComponents[2].getText().toString()),
+                            Integer.parseInt(editTextComponents[3].getText().toString())));
+                } catch (Exception e) {
+                }
+            }
+        });
     }
+
     private void closeKeyboard() {
         View view = this.getCurrentFocus();
-        if(view != null) {
+        if (view != null) {
             InputMethodManager imn = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imn.hideSoftInputFromWindow(view.getWindowToken(),0);
+            imn.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
     private String getOperationNameByIndex(int index) {
         switch (index) {
             case 0:
@@ -108,7 +95,17 @@ public class OperationActivity extends AppCompatActivity {
         }
     }
 
-    private String doOperation(int operationIdx, int a1, int a2, int b1, int b2) {
+    /**
+     * Выполнить операцию
+     *
+     * @param operationIdx Номеер типа операции
+     * @param a1 Числитель первой дроби
+     * @param a2 Знаменатель первой дроби
+     * @param b1 Числитель второй дроби
+     * @param b2 Знаменатель второй дроби
+     * @return Результат выполнения операции
+     */
+    public String doOperation(int operationIdx, int a1, int a2, int b1, int b2) {
         switch (operationIdx) {
             case 0:
                 return plusDrob(a1, a2, b1, b2);
@@ -216,4 +213,7 @@ public class OperationActivity extends AppCompatActivity {
         return coeff;
     }
 }
+
+
+
 
