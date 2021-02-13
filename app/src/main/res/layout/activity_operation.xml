@@ -1,160 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/toychka1"
     android:orientation="vertical"
-    tools:context="com.example.test.OperationActivity">
+    tools:context="com.example.test.OperationActivity"
+    tools:ignore="ExtraText">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        tools:ignore="UselessParent">
-
-        <Button
-            android:id="@+id/button_back"
-            android:layout_width="93dp"
-            android:layout_height="55dp"
-            android:background="@drawable/buttonback1"
-            android:gravity="center"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/buttonCalculate"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="#FFFFFF"
-            android:text="Расчитать" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/edNumerator1"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:background="@drawable/toychka1"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="5dp"
-                android:digits="1234567890"
-                android:gravity="center"
-                android:hint="1\nчислитель"
-                android:inputType="number"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="149dp"
-                android:layout_height="49dp"
-                android:background="@drawable/min" />
-
-            <EditText
-                android:id="@+id/edDenominator1"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/toychka1"
-                android:digits="1234567890"
-                android:gravity="center"
-                android:hint="1 знаменатель"
-                android:inputType="number"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="93dp"
+        android:layout_height="55dp"
+        android:background="@drawable/buttonback1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-        </LinearLayout>
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:background="@drawable/obvodka_2"
+        android:text="Расчитать"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_back"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/operationName"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="56dp"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="30sp" />
+    <EditText
+        android:id="@+id/edNumerator1"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/toychka1"
+        android:digits="1234567890"
+        android:gravity="center"
+        android:hint="1\nчислитель"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/operationName"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146"
+        tools:ignore="MissingConstraints" />
 
-        </LinearLayout>
+    <EditText
+        android:id="@+id/edDenominator1"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/toychka1"
+        android:digits="1234567890"
+        android:gravity="center"
+        android:hint="1 знаменатель"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/operationName"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="149dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:background="@drawable/min"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edNumerator2"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edNumerator1"
+        app:layout_constraintVertical_bias="0.0" />
 
-            <EditText
-                android:id="@+id/edNumerator2"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/toychka1"
-                android:digits="1234567890"
-                android:gravity="center"
-                android:hint="2\nчислитель"
-                android:inputType="number"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/operationName"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edDenominator1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edNumerator1"
+        app:layout_constraintVertical_bias="0.488"
+        tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="149dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="70dp"
-                android:background="@drawable/min" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="149dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/min"
+        app:layout_constraintBottom_toTopOf="@+id/edDenominator2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toEndOf="@+id/edNumerator1"
+        app:layout_constraintTop_toBottomOf="@+id/edNumerator2"
+        app:layout_constraintVertical_bias="0.001" />
 
-            <EditText
-                android:id="@+id/edDenominator2"
-                android:layout_width="120dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/toychka1"
-                android:digits="1234567890"
-                android:gravity="center"
-                android:hint="2 знаминатель"
-                android:inputType="number"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+    <EditText
+        android:id="@+id/edDenominator2"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/toychka1"
+        android:digits="1234567890"
+        android:gravity="center"
+        android:hint="2 знаминатель"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toEndOf="@+id/operationName"
+        app:layout_constraintTop_toTopOf="@+id/edNumerator2" />
 
-        </LinearLayout>
+    <EditText
+        android:id="@+id/edNumerator2"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/toychka1"
+        android:digits="1234567890"
+        android:gravity="center"
+        android:hint="2\nчислитель"
+        android:inputType="number"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toEndOf="@+id/operationName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146"
+        tools:ignore="MissingConstraints" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="315dp"
+        android:layout_height="315dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/kvadrat1"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operationName" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    ForpixelC:
 
-        <TextView
-            android:id="@+id/textName"
-            android:layout_width="258dp"
-            android:layout_height="251dp"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:background="@drawable/kvadrat1"
-            android:textColor="#000000"
-            android:textSize="40sp" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

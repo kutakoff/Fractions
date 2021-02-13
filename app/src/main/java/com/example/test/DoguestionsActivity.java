@@ -16,8 +16,8 @@ public class DoguestionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_doguestions);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mainGrid = findViewById(R.id.mainGrid);
         setToggleEvent(mainGrid);
         CardView PLUS = findViewById(R.id.tutorialplus);

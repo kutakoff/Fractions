@@ -165,7 +165,7 @@ public class OperationActivity extends AppCompatActivity {
             sum = sum - (p * noz);
         }
         if (p != 0) {
-            s = "" + p;
+            s = "  " + p;
         }
         if (sum != 0) {
             int coeff = getCoeffDevide(sum, noz);
@@ -173,12 +173,12 @@ public class OperationActivity extends AppCompatActivity {
                 sum = sum / coeff;
                 noz = noz / coeff;
             }
-            s = ("".equals(s) ? "" : s + " ") + sum + "/" + noz;
+            s = ("  ".equals(s) ? "  " : s + " ") + sum + "/" + noz;
         }
         if (p == 0 && sum == 0 && "".equals(s)) {
             s = "0";
         }
-        System.out.println("Результат: " + s + " или в десятичном представлении = " + sumD);
+        System.out.println("Результат: " +   s    + " или в десятичном представлении = " + sumD);
         return s;
     }
 
