@@ -12,8 +12,40 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class OperationActivity extends AppCompatActivity {
+
+    private static String SPEC_DELIMITER_FRACTION = "̸";
+
+    private static Map<Character, String> specSymbolsUp = Collections.unmodifiableMap(new HashMap<Character, String>(){{
+        put('0', "⁰");
+        put('1', "¹");
+        put('2', "²");
+        put('3', "³");
+        put('4', "⁴");
+        put('5', "⁵");
+        put('6', "⁶");
+        put('7', "⁷");
+        put('8', "⁸");
+        put('9', "⁹");
+    }});
+
+    private static Map<Character, String> specSymbolsDown = Collections.unmodifiableMap(new HashMap<Character, String>(){{
+        put('0', "₀");
+        put('1', "₁");
+        put('2', "₂");
+        put('3', "₃");
+        put('4', "₄");
+        put('5', "₅");
+        put('6', "₆");
+        put('7', "₇");
+        put('8', "₈");
+        put('9', "₉");
+    }});
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +93,7 @@ public class OperationActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
+                    closeKeyboard();
                     textName.setText(doOperation(operationIdx,
                             Integer.parseInt(editTextComponents[0].getText().toString()),
                             Integer.parseInt(editTextComponents[1].getText().toString()),
@@ -155,7 +188,6 @@ public class OperationActivity extends AppCompatActivity {
         return umnDrob(a1, a2, b2, b1);
     }
 
-
     private static String getResult(int sum, int noz) {
         float sumD = (float) sum / noz;
         String s = "";
@@ -173,7 +205,22 @@ public class OperationActivity extends AppCompatActivity {
                 sum = sum / coeff;
                 noz = noz / coeff;
             }
-            s = ("  ".equals(s) ? "  " : s + " ") + sum + "/" + noz;
+            s = ("  ".equals(s) ? "  " : s + " ");
+            StringBuilder sumSResult = new StringBuilder();
+            if (sum != 0) {
+                String sumS = Integer.toString(sum);
+                for (char ch : sumS.toCharArray()) {
+                    sumSResult.append(specSymbolsUp.get(ch));
+                }
+            }
+            StringBuilder nozSResult = new StringBuilder();
+            if (noz != 0) {
+                String nozS = Integer.toString(noz);
+                for (char ch : nozS.toCharArray()) {
+                    nozSResult.append(specSymbolsDown.get(ch));
+                }
+            }
+            s += " " + sumSResult.toString() + "   " + SPEC_DELIMITER_FRACTION + nozSResult.toString();
         }
         if (p == 0 && sum == 0 && "".equals(s)) {
             s = "0";

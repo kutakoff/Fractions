@@ -1,4 +1,4 @@
- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -57,7 +57,7 @@
                 android:background="@drawable/toychka1"
                 android:digits="123456789"
                 android:gravity="center"
-                android:hint="2 \n знаминатель   "
+                android:hint="2 \nзнаминатель   "
                 android:inputType="number"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -87,7 +87,7 @@
                 android:background="@drawable/toychka1"
                 android:digits="123456789"
                 android:gravity="center"
-                android:hint="2 \n знаминатель"
+                android:hint="2 \nзнаминатель"
                 android:inputType="number"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -132,19 +132,25 @@
             android:id="@+id/editTextTextPersonName"
             android:layout_width="60dp"
             android:layout_height="60dp"
+                android:textColor="#808080"
+                android:hint="Целое число"
+                android:textSize="20sp"
+                android:gravity="center"
             android:layout_marginTop="-180dp"
             android:layout_marginStart="70dp"
-            android:text="Name"
             android:layout_marginLeft="50dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName1"
                 android:layout_width="110dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="180dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="-61dp"
-                android:text="Name" />
+                android:textSize="20sp"
+                android:textColor="#808080"
+                android:hint="Дробная часть"
+                android:gravity="center"
+                android:layout_marginTop="-60dp"
+                android:layout_marginStart="170dp"
+                android:layout_marginLeft="170dp" />
         </LinearLayout>
 
         <LinearLayout

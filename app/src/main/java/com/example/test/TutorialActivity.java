@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -12,17 +11,16 @@ import android.widget.Button;
 import android.widget.MediaController;
 
 public class TutorialActivity extends AppCompatActivity {
-CardView tutorialplus;
-CardView tutorialmin;
-CardView tutorialumn;
-CardView tutorialdel;
-CardView firststartvideo;
+    CardView tutorialplus;
+    CardView tutorialmin;
+    CardView tutorialumn;
+    CardView tutorialdel;
+    CardView firststartvideo;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_tutorial);
 
         Button button_back = findViewById(R.id.button_back);

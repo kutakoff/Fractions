@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <Button
         android:id="@+id/buttonCalculate"
         android:layout_width="130dp"
@@ -31,7 +30,6 @@
         app:layout_constraintStart_toStartOf="@+id/button_back"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/edNumerator1"
         android:layout_width="120dp"
@@ -40,10 +38,11 @@
         android:layout_marginLeft="16dp"
         android:background="@drawable/toychka1"
         android:digits="1234567890"
+        android:maxLength="3"
         android:gravity="center"
         android:hint="1\nчислитель"
         android:inputType="number"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/operationName"
@@ -62,9 +61,10 @@
         android:background="@drawable/toychka1"
         android:digits="1234567890"
         android:gravity="center"
+        android:maxLength="3"
         android:hint="1 знаменатель"
         android:inputType="number"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/operationName"
         app:layout_constraintHorizontal_bias="0.415"
@@ -75,8 +75,6 @@
         android:id="@+id/textView4"
         android:layout_width="149dp"
         android:layout_height="49dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
         android:background="@drawable/min"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edNumerator2"
@@ -89,6 +87,8 @@
         android:id="@+id/operationName"
         android:layout_width="60dp"
         android:layout_height="52dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginRight="5dp"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -98,14 +98,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edNumerator1"
         app:layout_constraintVertical_bias="0.488"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="5dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="149dp"
         android:layout_height="49dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         android:background="@drawable/min"
         app:layout_constraintBottom_toTopOf="@+id/edDenominator2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,10 +122,11 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/toychka1"
         android:digits="1234567890"
+        android:maxLength="3"
         android:gravity="center"
         android:hint="2 знаминатель"
         android:inputType="number"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.575"
@@ -142,9 +142,10 @@
         android:background="@drawable/toychka1"
         android:digits="1234567890"
         android:gravity="center"
+        android:maxLength="3"
         android:hint="2\nчислитель"
         android:inputType="number"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,18 +157,16 @@
 
     <TextView
         android:id="@+id/textName"
-        android:layout_width="315dp"
-        android:layout_height="315dp"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/kvadrat1"
         android:gravity="center"
         android:textColor="#000000"
-        android:textSize="40sp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operationName" />
-
-    ForpixelC:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
