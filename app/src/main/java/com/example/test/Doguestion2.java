@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import java.util.Random;
 
 public class Doguestion2 extends Activity {
@@ -26,6 +28,7 @@ public class Doguestion2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_doguestion2);
         flipper = findViewById(R.id.viewflipper);
         TextView edNumerator1 = findViewById(R.id.edNumerator1);

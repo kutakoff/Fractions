@@ -1,6 +1,7 @@
 package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -49,6 +50,7 @@ public class OperationActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_operation);
         final Button button_back = findViewById(R.id.button_back);
@@ -197,7 +199,7 @@ public class OperationActivity extends AppCompatActivity {
             sum = sum - (p * noz);
         }
         if (p != 0) {
-            s = "  " + p;
+            s = "" + p;
         }
         if (sum != 0) {
             int coeff = getCoeffDevide(sum, noz);
@@ -205,7 +207,6 @@ public class OperationActivity extends AppCompatActivity {
                 sum = sum / coeff;
                 noz = noz / coeff;
             }
-            s = ("  ".equals(s) ? "  " : s + " ");
             StringBuilder sumSResult = new StringBuilder();
             if (sum != 0) {
                 String sumS = Integer.toString(sum);
