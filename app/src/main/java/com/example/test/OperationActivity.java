@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -58,27 +59,19 @@ public class OperationActivity extends AppCompatActivity {
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(OperationActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e) {
-
-                }
+                onBackPressed();
             }
         });
-        setTextViewsFocusChangeListener(getIntent().getExtras().getInt("operation"));
+        if (getIntent().getExtras() != null) {
+            setTextViewsFocusChangeListener(getIntent().getExtras().getInt("operation"));
+        }
     }
 
     @Override
     public void onBackPressed() {
-        try {
-            Intent intent = new Intent(OperationActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        } catch (Exception e) {
-
-        }
+        Intent intent = new Intent(OperationActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void setTextViewsFocusChangeListener(final int operationIdx) {
@@ -94,17 +87,45 @@ public class OperationActivity extends AppCompatActivity {
         final Button button1 = findViewById(R.id.buttonCalculate);
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                try {
-                    closeKeyboard();
-                    textName.setText(doOperation(operationIdx,
-                            Integer.parseInt(editTextComponents[0].getText().toString()),
-                            Integer.parseInt(editTextComponents[1].getText().toString()),
-                            Integer.parseInt(editTextComponents[2].getText().toString()),
-                            Integer.parseInt(editTextComponents[3].getText().toString())));
-                } catch (Exception e) {
-                }
+                closeKeyboard();
+                textName.setText(makeCheckAndGetResult(editTextComponents, operationIdx));
             }
         });
+    }
+
+    private String makeCheckAndGetResult(EditText[] editTextComponents, int operationIdx) {
+        String sNum1 = editTextComponents[0].getText().toString();
+        String sDenum1 = editTextComponents[1].getText().toString();
+        String sNum2 = editTextComponents[2].getText().toString();
+        String sDenum2 = editTextComponents[3].getText().toString();
+        try {
+            checkFractionsEmpty(sNum1, "числитель 1 дроби");
+            checkFractionsEmpty(sDenum1, "знаменатель 1 дроби");
+            checkFractionsEmpty(sNum2, "числитель 2 дроби");
+            checkFractionsEmpty(sDenum2, "знаменатель 2 дроби");
+        } catch (IllegalStateException e) {
+            // Ошибка, возвращаем пустое значение
+            return "";
+        }
+        int num1 = Integer.parseInt(sNum1);
+        int denum1 = Integer.parseInt(sDenum1);
+        int num2 = Integer.parseInt(sNum2);
+        int denum2 = Integer.parseInt(sDenum2);
+
+        if (denum1 == 0 || denum2 == 0) {
+            Toast.makeText(getApplicationContext(), "Знаменатель не может иметь значение \"0\"", Toast.LENGTH_LONG).show();
+            return "";
+        } else {
+            return doOperation(operationIdx, num1, denum1, num2, denum2);
+        }
+    }
+
+    private void checkFractionsEmpty(String value, String checkPartName) throws IllegalStateException {
+        if ("".equals(value)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Не заполнен " + checkPartName, Toast.LENGTH_LONG);
+            toast.show();
+            throw new IllegalStateException();
+        }
     }
 
     private void closeKeyboard() {
@@ -191,42 +212,42 @@ public class OperationActivity extends AppCompatActivity {
     }
 
     private static String getResult(int sum, int noz) {
-        float sumD = (float) sum / noz;
         String s = "";
         int p = 0;
-        if (Math.abs(sum) >= noz) {
-            p = sum / noz;
-            sum = sum - (p * noz);
-        }
-        if (p != 0) {
-            s = "" + p;
-        }
-        if (sum != 0) {
-            int coeff = getCoeffDevide(sum, noz);
-            if (coeff != 0) {
-                sum = sum / coeff;
-                noz = noz / coeff;
+        if (noz != 0) {
+            if (Math.abs(sum) >= noz) {
+                p = sum / noz;
+                sum = sum - (p * noz);
             }
-            StringBuilder sumSResult = new StringBuilder();
+            if (p != 0) {
+                s = "" + p;
+            }
             if (sum != 0) {
-                String sumS = Integer.toString(sum);
-                for (char ch : sumS.toCharArray()) {
-                    sumSResult.append(specSymbolsUp.get(ch));
+                int coeff = getCoeffDevide(sum, noz);
+                if (coeff != 0) {
+                    sum = sum / coeff;
+                    noz = noz / coeff;
                 }
-            }
-            StringBuilder nozSResult = new StringBuilder();
-            if (noz != 0) {
-                String nozS = Integer.toString(noz);
-                for (char ch : nozS.toCharArray()) {
-                    nozSResult.append(specSymbolsDown.get(ch));
+                StringBuilder sumSResult = new StringBuilder();
+                if (sum != 0) {
+                    String sumS = Integer.toString(sum);
+                    for (char ch : sumS.toCharArray()) {
+                        sumSResult.append(specSymbolsUp.get(ch));
+                    }
                 }
+                StringBuilder nozSResult = new StringBuilder();
+                if (noz != 0) {
+                    String nozS = Integer.toString(noz);
+                    for (char ch : nozS.toCharArray()) {
+                        nozSResult.append(specSymbolsDown.get(ch));
+                    }
+                }
+                s += " " + sumSResult.toString() + "   " + SPEC_DELIMITER_FRACTION + nozSResult.toString();
             }
-            s += " " + sumSResult.toString() + "   " + SPEC_DELIMITER_FRACTION + nozSResult.toString();
         }
-        if (p == 0 && sum == 0 && "".equals(s)) {
+        if ((p == 0 && sum == 0 && "".equals(s)) || noz == 0) {
             s = "0";
         }
-        System.out.println("Результат: " +   s    + " или в десятичном представлении = " + sumD);
         return s;
     }
 

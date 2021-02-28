@@ -49,8 +49,7 @@
         app:layout_constraintHorizontal_bias="0.415"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <EditText
         android:id="@+id/edDenominator1"
@@ -98,7 +97,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edNumerator1"
         app:layout_constraintVertical_bias="0.488"
-        tools:ignore="MissingConstraints"
         android:layout_marginLeft="5dp" />
 
     <TextView
@@ -152,14 +150,12 @@
         app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toEndOf="@+id/operationName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <TextView
         android:id="@+id/textName"
         android:layout_width="340dp"
         android:layout_height="340dp"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/kvadrat1_1"
         android:gravity="center"
         android:textColor="#000000"

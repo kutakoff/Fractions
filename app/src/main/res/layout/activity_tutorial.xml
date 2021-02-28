@@ -21,8 +21,6 @@
         android:id="@+id/textGrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:gravity="center"
         android:text="Выберите видео, которое хотите посмотреть"
         android:textColor="@android:color/black"

@@ -30,9 +30,6 @@ public class TutorialActivity extends AppCompatActivity {
         tutorialumn = findViewById(R.id.tutorialumn);
         tutorialdel = findViewById(R.id.tutorialdel);
         firststartvideo = findViewById(R.id.firststartvideo);
-
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
-        Uri uri = Uri.parse(videoPath);
         MediaController mediaController = new MediaController(this);
         button_back.setOnClickListener(new View.OnClickListener() {
             @Override
