@@ -127,7 +127,8 @@
             android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp" >
 
             <ImageView
                 android:layout_width="wrap_content"
