@@ -243,7 +243,6 @@
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="-87dp"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="30sp" />
 
@@ -254,8 +253,7 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="-50dp"
-                android:background="@drawable/min"
-                android:text="" />
+                android:background="@drawable/min" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -264,7 +262,6 @@
                 android:layout_marginStart="165dp"
                 android:layout_marginTop="-50dp"
                 android:background="@drawable/min"
-                android:text=""
                 android:layout_marginLeft="250dp" />
 
             <EditText
@@ -276,7 +273,6 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/kvadrat1_1"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="41sp" />
         </LinearLayout>
@@ -372,7 +368,6 @@
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="-87dp"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="30sp" />
 
@@ -383,8 +378,7 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="-50dp"
-                android:background="@drawable/min"
-                android:text="" />
+                android:background="@drawable/min" />
 
             <TextView
                 android:id="@+id/textView32"
@@ -393,7 +387,6 @@
                 android:layout_marginStart="165dp"
                 android:layout_marginTop="-50dp"
                 android:background="@drawable/min"
-                android:text=""
                 android:layout_marginLeft="250dp" />
 
             <EditText
@@ -405,7 +398,6 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/kvadrat1_1"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="41sp" />
         </LinearLayout>
@@ -500,7 +492,6 @@
                 android:layout_marginLeft="135dp"
                 android:layout_marginTop="-87dp"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="30sp" />
 
@@ -511,8 +502,7 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="-50dp"
-                android:background="@drawable/min"
-                android:text="" />
+                android:background="@drawable/min" />
 
             <TextView
                 android:id="@+id/textView3.3"
@@ -521,7 +511,6 @@
                 android:layout_marginStart="165dp"
                 android:layout_marginTop="-50dp"
                 android:background="@drawable/min"
-                android:text=""
                 android:layout_marginLeft="250dp" />
 
             <EditText
@@ -533,7 +522,6 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/kvadrat1_1"
                 android:gravity="center"
-                android:text=""
                 android:textColor="#000000"
                 android:textSize="41sp" />
         </LinearLayout>
