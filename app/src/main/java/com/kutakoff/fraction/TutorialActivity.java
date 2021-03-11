@@ -1,16 +1,17 @@
-package com.example.test;
+package com.kutakoff.fraction;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+
+import com.kutakoff.fraction.MainActivity;
+import com.kutakoff.fraction.R;
 
 public class TutorialActivity extends AppCompatActivity {
     CardView tutorialplus;

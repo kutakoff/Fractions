@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_3"
-    tools:context="com.example.test.MainActivity">
+    tools:context="com.kutakoff.fraction.MainActivity">
 
     <GridLayout
         android:id="@+id/mainGrid"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/beznichego6"
-    tools:context="com.example.test.OperationActivity"
+    tools:context="com.kutakoff.fraction.OperationActivity"
     tools:ignore="ExtraText">
 
     <Button

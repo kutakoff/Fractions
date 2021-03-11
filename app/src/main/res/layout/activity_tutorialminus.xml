@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/beznichego6"
-    tools:context="com.example.test.Tutorialminus">
+    tools:context="com.kutakoff.fraction.Tutorialminus">
 
   <Button
       android:id="@+id/button_back"

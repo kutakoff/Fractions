@@ -1,4 +1,4 @@
-package com.example.test;
+package com.kutakoff.fraction;
 
 import android.app.Activity;
 import android.content.Intent;

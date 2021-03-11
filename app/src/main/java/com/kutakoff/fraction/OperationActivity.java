@@ -1,7 +1,6 @@
-package com.example.test;
+package com.kutakoff.fraction;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.kutakoff.fraction.MainActivity;
+import com.kutakoff.fraction.R;
 
 import java.util.Collections;
 import java.util.HashMap;

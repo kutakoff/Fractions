@@ -1,4 +1,4 @@
-package com.example.test;
+package com.kutakoff.fraction;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;

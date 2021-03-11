@@ -1,7 +1,6 @@
-package com.example.test;
+package com.kutakoff.fraction;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -9,6 +8,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
+
+import com.kutakoff.fraction.OperationActivity;
+import com.kutakoff.fraction.TutorialActivity;
 
 public class MainActivity extends AppCompatActivity {
     GridLayout mainGrid;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < mainGrid.getChildCount(); i++) {
             final CardView cardView = (CardView) mainGrid.getChildAt(i);
             final int idx = i;
-            cardView.setOnClickListener(new View.   OnClickListener() {
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (idx <= 3) {
