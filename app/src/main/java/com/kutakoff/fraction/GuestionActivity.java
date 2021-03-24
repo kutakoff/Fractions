@@ -13,11 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import androidx.appcompat.app.AppCompatDelegate;
-
 import java.util.Random;
 
-public class Doguestion2 extends Activity {
+public class GuestionActivity extends Activity {
 
     ViewFlipper flipper;
 
@@ -30,7 +28,7 @@ public class Doguestion2 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_doguestion2);
+        setContentView(R.layout.activity_guestion);
         flipper = findViewById(R.id.viewflipper);
         TextView edNumerator1 = findViewById(R.id.edNumerator1);
         TextView edNumerator11 = findViewById(R.id.edNumerator11);
@@ -129,7 +127,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -141,7 +139,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -153,7 +151,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -165,7 +163,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -177,7 +175,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -189,7 +187,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -201,7 +199,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -213,7 +211,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -225,7 +223,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -237,7 +235,7 @@ public class Doguestion2 extends Activity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Doguestion2.this, DoguestionsActivity.class);
+                    Intent intent = new Intent(GuestionActivity.this, DoguestionsActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {

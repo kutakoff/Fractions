@@ -23,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
-
         learn = findViewById(R.id.learn);
-        doguestions = findViewById(R.id.tutorialumn);
+        doguestions = findViewById(R.id.reshebnik);
         mainGrid = findViewById(R.id.mainGrid);
         setToggleEvent(mainGrid);
         learn.setOnClickListener(new View.OnClickListener() {
@@ -34,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TutorialActivity.class));
             }
         });
+        doguestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DoguestionsActivity.class));
+            }
+        });
     }
-
 
         private void setToggleEvent(GridLayout mainGrid) {
         for (int i = 0; i < mainGrid.getChildCount(); i++) {
